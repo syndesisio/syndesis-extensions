@@ -3,235 +3,191 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>io.syndesis.extensions</groupId>
-  <artifactId>syndesis-extension-groovy</artifactId>
-  <version>1.0.0</version>
-  <name>Syndesis Extension - Groovy</name>
-  <description>An extension to Syndesis to invoke Groovy Scripts inyour pipelines</description>
-  <packaging>jar</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.syndesis.extensions</groupId>
+    <artifactId>syndesis-extension-groovy</artifactId>
+    <version>1.0.0</version>
+    <name>Syndesis Extension - Groovy</name>
+    <description>An extension to Syndesis to invoke Groovy Scripts inyour pipelines</description>
+    <packaging>jar</packaging>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <java.version>1.8</java.version>
+        <java.version>1.8</java.version>
 
-    <!-- plugins -->
-    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <!-- plugins -->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
 
-    <!-- dependencies -->
-    <camel.version>2.20.1</camel.version>
-    <syndesis.version>1.2-SNAPSHOT</syndesis.version>
+        <!-- dependencies -->
+        <camel.version>2.20.1</camel.version>
+        <syndesis.version>1.2-SNAPSHOT</syndesis.version>
 
-    <!-- extension metadata -->
-    <extension.id>Groovy</extension.id>
-    <extension.name>Groovy</extension.name>
-    <extension.description>Groovy</extension.description>
-    <extension.version>${project.version}</extension.version>
-    <extension.tags>whatever_we_are_overriding_this_in_syndesis-extension-definition.json</extension.tags>
-  </properties>
+        <!-- extension metadata -->
+        <extension.id>Groovy</extension.id>
+        <extension.name>Groovy</extension.name>
+        <extension.description>Groovy</extension.description>
+        <extension.version>${project.version}</extension.version>
+        <extension.tags>whatever_we_are_overriding_this_in_syndesis-extension-definition.json</extension.tags>
+    </properties>
 
-  <dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.syndesis</groupId>
+                <artifactId>extension-bom</artifactId>
+                <version>${syndesis.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-spring-boot-dependencies</artifactId>
+                <version>${camel.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
     <dependencies>
-      <dependency>
-        <groupId>org.apache.camel</groupId>
-        <artifactId>camel-spring-boot-dependencies</artifactId>
-        <version>${camel.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.syndesis</groupId>
-        <artifactId>syndesis-rest-parent</artifactId>
-        <version>${syndesis.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.syndesis</groupId>
-        <artifactId>integration-runtime</artifactId>
-        <version>${syndesis.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+        <!-- annotation processing -->
+        <dependency>
+            <groupId>io.syndesis</groupId>
+            <artifactId>extension-annotation-processor</artifactId>
+            <version>${syndesis.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- runtime -->
+        <dependency>
+            <groupId>io.syndesis</groupId>
+            <artifactId>extension-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- project dependencies -->
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <!-- it's essential to provide scope=provided -->
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring-boot-starter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-  </dependencyManagement>
 
-
-  <dependencies>
-    <!-- annotation processing -->
-    <dependency>
-      <groupId>io.syndesis</groupId>
-      <artifactId>syndesis-annotation-processor</artifactId>
-      <version>${syndesis.version}</version>
-      <optional>true</optional>
-    </dependency>
-
-    <!-- runtime -->
-    <dependency>
-      <groupId>io.syndesis.integration-runtime</groupId>
-      <artifactId>runtime-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-core</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- project dependencies -->
-
-    <dependency>
-        <groupId>org.codehaus.groovy</groupId>
-        <artifactId>groovy-all</artifactId>
-        <!-- it's essential to provide scope=provided -->
-        <scope>provided</scope>
-    </dependency>
-
-
-    <!-- testing -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-spring-boot-starter</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>io.syndesis</groupId>
-        <artifactId>syndesis-maven-plugin</artifactId>
-        <version>${syndesis.version}</version>
-        <configuration>
-          <listAllArtifacts>false</listAllArtifacts>
-        </configuration>
-        <executions>
-          <execution>
-            <id>generate</id>
-            <goals>
-              <goal>generate-metadata</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>repackage</id>
-            <goals>
-              <goal>repackage-extension</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-    </plugins>
-  </build>
-
-
-  <profiles>
-    
-    <!-- ********************************************************* -->
-    <!-- Extension info taken from project                         -->
-    <!-- ********************************************************* -->
-
-    <profile>
-      <id>project</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-
-      <build>
+    <build>
         <plugins>
-          <plugin>
-            <groupId>io.syndesis</groupId>
-            <artifactId>syndesis-maven-plugin</artifactId>
-            <version>${syndesis.version}</version>
-            <executions>
-              <execution>
-                <id>generate</id>
-                <goals>
-                  <goal>generate-metadata</goal>
-                </goals>
-              </execution>
-              <execution>
-                <id>repackage</id>
-                <goals>
-                  <goal>repackage-extension</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>io.syndesis</groupId>
+                <artifactId>extension-maven-plugin</artifactId>
+                <version>${syndesis.version}</version>
+                <configuration>
+                    <listAllArtifacts>false</listAllArtifacts>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <goals>
+                            <goal>generate-metadata</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage-extension</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
-      </build>
-    </profile>
-    
-    <!-- ********************************************************* -->
-    <!-- Extension info taken from plugin configuration            -->
-    <!-- ********************************************************* -->
+    </build>
 
-    <profile>
-      <id>config</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
 
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>io.syndesis</groupId>
-            <artifactId>syndesis-maven-plugin</artifactId>
-            <version>${syndesis.version}</version>
-            <configuration>
-                <extensionId>${extension.id}</extensionId>
-                <name>${extension.name}</name>
-                <description>${extension.description}</description>
-                <version>${extension.version}</version>
-                <tags>${extension.tags}</tags>
-            </configuration>
-            <executions>
-              <execution>
-                <id>generate</id>
-                <goals>
-                  <goal>generate-metadata</goal>
-                </goals>
-              </execution>
-              <execution>
-                <id>repackage</id>
-                <goals>
-                  <goal>repackage-extension</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+    <profiles>
+        <!-- ********************************************************* -->
+        <!-- Extension info taken from plugin configuration            -->
+        <!-- ********************************************************* -->
 
-  </profiles>
+        <profile>
+            <id>config</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
 
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.syndesis</groupId>
+                        <artifactId>extension-maven-plugin</artifactId>
+                        <version>${syndesis.version}</version>
+                        <configuration>
+                            <extensionId>${extension.id}</extensionId>
+                            <name>${extension.name}</name>
+                            <description>${extension.description}</description>
+                            <version>${extension.version}</version>
+                            <tags>${extension.tags}</tags>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>generate</id>
+                                <goals>
+                                    <goal>generate-metadata</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>repackage</id>
+                                <goals>
+                                    <goal>repackage-extension</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 </project>
