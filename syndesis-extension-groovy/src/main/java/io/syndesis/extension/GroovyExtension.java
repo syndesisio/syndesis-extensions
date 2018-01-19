@@ -12,8 +12,8 @@ import org.slf4j.LoggerFactory;
 
 import groovy.lang.Binding;
 import groovy.lang.GroovyShell;
-import io.syndesis.integration.runtime.api.SyndesisActionProperty;
-import io.syndesis.integration.runtime.api.SyndesisExtensionAction;
+import io.syndesis.extension.api.SyndesisActionProperty;
+import io.syndesis.extension.api.SyndesisExtensionAction;
 
 @SyndesisExtensionAction(id = "groovy", name = "groovy", description = "Run Groovy scripts.")
 public class GroovyExtension {
