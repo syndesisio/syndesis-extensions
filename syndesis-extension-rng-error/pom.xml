@@ -7,7 +7,7 @@
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-rng-error</artifactId>
     <version>1.0.0</version>
-    <name>Syndesis Extension - Random Error</name>
+    <name>Random Error</name>
     <description>An extension to Generate Random Errors</description>
     <packaging>jar</packaging>
 
