@@ -1,6 +1,5 @@
 {
   "schemaVersion": "v1",
-  "icon": "https://telegram.org/img/t_logo.png",
   "properties": {
     "authorizationToken": {
       "kind": "property",
