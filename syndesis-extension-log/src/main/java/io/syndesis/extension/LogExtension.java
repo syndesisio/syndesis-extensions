@@ -4,6 +4,7 @@ import io.syndesis.extension.api.SyndesisActionProperty;
 import io.syndesis.extension.api.SyndesisExtensionAction;
 import io.syndesis.extension.api.SyndesisStepExtension;
 import org.apache.camel.CamelContext;
+import org.apache.camel.LoggingLevel;
 import org.apache.camel.model.ProcessorDefinition;
 
 import java.util.Map;
@@ -19,6 +20,6 @@ public class LogExtension implements SyndesisStepExtension {
         if( message == null ) {
             message = "Example Message: ${body}";
         }
-        return Optional.of(route.log(message));
+        return Optional.of(route.log(LoggingLevel.INFO,  route.getId(), route.getId(), message));
     }
 }
