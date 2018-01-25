@@ -1,0 +1,85 @@
+{
+    "schemaVersion": "v1",
+    "actions": [
+        {
+            "name": "Simple Timer",
+            "description": "Simple Timer",
+            "id": "io.syndesis:timer-action",
+            "pattern": "From",
+            "actionType": "connector",
+            "descriptor": {
+                "componentScheme": "timer",
+                "inputDataShape": {
+                    "kind": "none"
+                },
+                "outputDataShape": {
+                    "kind": "none"
+                },
+                "configuredProperties": {
+                    "timerName": "syndesis-timer"
+                },
+                "propertyDefinitionSteps": [
+                    {
+                        "description": "Period",
+                        "name": "period",
+                        "properties": {
+                            "period": {
+                                "componentProperty": false,
+                                "deprecated": false,
+                                "description": "Period",
+                                "displayName": "period",
+                                "javaType": "string",
+                                "kind": "parameter",
+                                "required": false,
+                                "secret": false,
+                                "type": "string",
+                                "tags": [],
+                                "enum": []
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Cron Timer",
+            "description": "Cron Timer",
+            "id": "io.syndesis:timer-chron",
+            "pattern": "From",
+            "actionType": "connector",
+            "descriptor": {
+                "componentScheme": "quartz2",
+                "inputDataShape": {
+                    "kind": "none"
+                },
+                "outputDataShape": {
+                    "kind": "none"
+                },
+                "configuredProperties": {
+                    "triggerName": "syndesis-quartz"
+                },
+                "propertyDefinitionSteps": [
+                    {
+                        "description": "Cron",
+                        "name": "cron",
+                        "properties": {
+                            "cron": {
+                                "componentProperty": false,
+                                "deprecated": false,
+                                "description": "Cron",
+                                "displayName": "cron",
+                                "javaType": "string",
+                                "kind": "parameter",
+                                "required": false,
+                                "secret": false,
+                                "type": "string",
+                                "tags": [],
+                                "enum": []
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
