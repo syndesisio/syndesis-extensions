@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "v1",
+  "properties": {
+    "authorizationToken": {
+      "kind": "property",
+      "displayName": "Authorization Token",
+      "group": "security",
+      "label": "security",
+      "required": true,
+      "type": "string",
+      "javaType": "java.lang.String",
+      "tags": [],
+      "deprecated": false,
+      "secret": true,
+      "componentProperty": false,
+      "description": "Telegram Bot Authorization Token"
+    }
+  },
+  "actions": [
+    {
+      "name": "Chat Messages",
+      "description": "Receive all messages sent to the chat bot",
+      "id": "io.syndesis:telegram-chat-action",
+      "pattern": "From",
+      "actionType": "connector",
+      "descriptor": {
+        "componentScheme": "telegram",
+        "inputDataShape": {
+          "kind": "none"
+        },
+        "outputDataShape": {
+          "kind": "java",
+          "type": "org.apache.camel.component.telegram.model.IncomingMessage"
+        },
+        "configuredProperties": {
+          "type": "bots"
+        }
+      }
+    }
+  ]
+}

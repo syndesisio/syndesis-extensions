@@ -7,7 +7,7 @@
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-log</artifactId>
     <version>1.0.0</version>
-    <name>Syndesis Extension - Log</name>
+    <name>Log</name>
     <description>An extension to Syndesis to do Logging</description>
     <packaging>jar</packaging>
 
