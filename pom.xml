@@ -27,13 +27,15 @@
   <name>Syndesis Extensions Parent</name>
   <description>A Collection of Extensions for Syndesis</description>
 
-  <!-- This is just a collector pom useful for building all child projects at once -->
+  <!-- This is just not a parent pom -->
+  <!-- It's just a collector for building all child projects at once -->
 
   <modules>
     <module>syndesis-extension-groovy</module>
     <module>syndesis-extension-log</module>
     <module>syndesis-extension-rng-error</module>
     <module>syndesis-extension-telegram</module>
+    <module>syndesis-extension-timer</module>
   </modules>
 
 </project>
