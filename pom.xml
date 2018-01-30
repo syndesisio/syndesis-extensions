@@ -31,7 +31,7 @@
   <!-- It's just a collector for building all child projects at once -->
 
   <modules>
-    <module>syndesis-extension-groovy</module>
+    <module>syndesis-extension-script</module>
     <module>syndesis-extension-log</module>
     <module>syndesis-extension-rng-error</module>
     <module>syndesis-extension-telegram</module>
