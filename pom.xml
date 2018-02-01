@@ -36,6 +36,7 @@
     <module>syndesis-extension-rng-error</module>
     <module>syndesis-extension-telegram</module>
     <module>syndesis-extension-timer</module>
+    <module>syndesis-extension-add-header</module>
   </modules>
 
 </project>
