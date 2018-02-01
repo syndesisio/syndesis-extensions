@@ -20,12 +20,12 @@
   
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.syndesis.extensions</groupId>
-  <artifactId>syndesis-extension-timer</artifactId>
+  <artifactId>syndesis-connector-timer</artifactId>
   <packaging>jar</packaging>
   <version>1.0.0</version>
 
   <name>Timer</name>
-  <description>Timer Extension for Syndesis</description>
+  <description>Timer Extension Connector for Syndesis</description>
 
   <properties>
     <syndesis.version>1.2-SNAPSHOT</syndesis.version>
