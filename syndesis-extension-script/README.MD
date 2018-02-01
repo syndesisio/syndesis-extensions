@@ -25,3 +25,5 @@ exchange.in.body="{'key':'NEW_BODY'}"
 ```
 
 _You can see that you have implicit access to the `exchange` variable, as described above._
+
+![Screenshot](screenshot.png)

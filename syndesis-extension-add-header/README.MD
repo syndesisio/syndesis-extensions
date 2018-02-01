@@ -6,3 +6,6 @@ The extension exposes two configurable fields:
 - **name** the header name
 - **value** the header value
 
+![Screenshot](screenshot.png)
+
+
