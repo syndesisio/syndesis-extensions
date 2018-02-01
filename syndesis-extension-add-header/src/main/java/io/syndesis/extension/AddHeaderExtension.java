@@ -7,8 +7,6 @@ import io.syndesis.extension.api.SyndesisActionProperty;
 import io.syndesis.extension.api.SyndesisExtensionAction;
 import io.syndesis.extension.api.SyndesisStepExtension;
 import org.apache.camel.CamelContext;
-import org.apache.camel.Exchange;
-import org.apache.camel.Message;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
@@ -62,12 +60,7 @@ public class AddHeaderExtension implements SyndesisStepExtension {
         ObjectHelper.notNull(name, "name");
         ObjectHelper.notNull(value, "value");
 
-        return Optional.of(route.process(this::process));
-    }
-
-	void process(Exchange exchange) throws Exception {
-
-    	Message message = exchange.hasOut() ? exchange.getOut() : exchange.getIn();
-    	message.setHeader(name, value);
+        route.setHeader(name).constant(value);
+        return Optional.empty();
     }
 }
