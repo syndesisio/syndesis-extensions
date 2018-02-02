@@ -10,7 +10,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "delay", name = "Delay", description = "Add a delay to your route")
+@SyndesisExtensionAction(id = "delay", name = "Delay", description = "Add a delay to your exchange")
 public class DelayExtension implements SyndesisStepExtension {
 
     // ************************
