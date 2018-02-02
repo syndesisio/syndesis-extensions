@@ -36,6 +36,7 @@
     <module>syndesis-connector-timer</module>
     <!--step extensions-->
     <module>syndesis-extension-add-header</module>
+    <module>syndesis-extension-delay</module>
     <module>syndesis-extension-log</module>
     <module>syndesis-extension-remove-header</module>
     <module>syndesis-extension-rng-error</module>
