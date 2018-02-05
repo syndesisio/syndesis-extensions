@@ -5,10 +5,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.syndesis.extensions</groupId>
-    <artifactId>syndesis-extension-add-header</artifactId>
+    <artifactId>syndesis-extension-manage-headers</artifactId>
     <version>1.0.0</version>
-    <name>Add Header</name>
-    <description>Add an header</description>
+    <name>Manage Headers</name>
+    <description>Manage headers</description>
     <packaging>jar</packaging>
 
     <properties>
