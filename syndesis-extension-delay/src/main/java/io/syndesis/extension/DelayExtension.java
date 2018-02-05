@@ -41,7 +41,7 @@ public class DelayExtension implements SyndesisStepExtension {
     public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(delay, "delay");
-        
+
         return Optional.of(route.delay(delay));
     }
 }
