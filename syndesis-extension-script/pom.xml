@@ -51,6 +51,15 @@
       <artifactId>extension-api</artifactId>
       <scope>provided</scope>
     </dependency>
+
+    <!-- project dependencies -->
+    <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-all</artifactId>
+        <!-- it's essential to provide scope=provided -->
+        <scope>provided</scope>
+    </dependency>
+    
   </dependencies>
 
   <build>
