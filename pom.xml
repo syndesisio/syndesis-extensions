@@ -32,6 +32,7 @@
 
   <modules>
     <!--connectors-->
+    <module>syndesis-connector-irc</module>
     <module>syndesis-connector-telegram</module>
     <module>syndesis-connector-timer</module>
     <!--step extensions-->
