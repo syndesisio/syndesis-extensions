@@ -1,9 +1,9 @@
-# Delay Extension
+# Log XML Extension
 
-This is a simple Syndesis Extension to add a delay to your route.
+This is a simple Syndesis Extension to add a body log message with a prefix.
 
 The extension exposes one configurable field:
-- **delay** the delay to apply
+- **prefix** the log message prefix
 
 ![Screenshot](screenshot.png)
 

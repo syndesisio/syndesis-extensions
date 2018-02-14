@@ -7,7 +7,7 @@
   <groupId>io.syndesis.extensions</groupId>
   <artifactId>syndesis-extension-log-xml</artifactId>
   <version>1.0.0</version>
-  <name>Log Message</name>
+  <name>Log Message XML</name>
   <description>Log a message with a prefix</description>
   <packaging>jar</packaging>
 
