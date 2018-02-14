@@ -1,0 +1,40 @@
+{
+  "actions": [
+    {
+      "actionType": "step",
+      "id": "throttle",
+      "name": "throttle",
+      "description": "A simple xml based throttle",
+      "tags": [
+        "xml"
+      ],
+      "descriptor": {
+        "kind": "ENDPOINT",
+        "entrypoint": "direct:throttle",
+        "inputDataShape": {
+          "kind": "any"
+        },
+        "outputDataShape": {
+          "kind": "any"
+        },
+      "propertyDefinitionSteps" : [ {
+        "description" : "The milliseconds to apply for the throttle",
+        "name" : "timePeriodMillis",
+        "properties" : {
+          "messages" : {
+            "componentProperty" : false,
+            "deprecated" : false,
+            "description" : "The number of messages",
+            "displayName" : "Messages",
+            "javaType" : "int",
+            "kind" : "parameter",
+            "required" : true,
+            "secret" : false,
+            "type" : "integer"
+          }
+        }
+      } ]
+      }
+    }
+  ]
+}
