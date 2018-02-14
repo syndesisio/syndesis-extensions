@@ -5,10 +5,10 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.syndesis.extensions</groupId>
-  <artifactId>syndesis-extension-log-xml</artifactId>
+  <artifactId>syndesis-extension-log-body</artifactId>
   <version>1.0.0</version>
-  <name>Log Message XML</name>
-  <description>Log a message with a prefix</description>
+  <name>Log Message Body</name>
+  <description>Log a message body with a prefix</description>
   <packaging>jar</packaging>
 
   <properties>

@@ -28,7 +28,7 @@
             "displayName" : "Log Prefix",
             "javaType" : "String",
             "kind" : "parameter",
-            "required" : true,
+            "required" : false,
             "secret" : false,
             "type" : "string"
           }

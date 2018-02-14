@@ -38,7 +38,7 @@
     <!--step extensions-->
     <module>syndesis-extension-delay</module>
     <module>syndesis-extension-log</module>
-    <module>syndesis-extension-log-xml</module>
+    <module>syndesis-extension-log-body</module>
     <module>syndesis-extension-loop</module>
     <module>syndesis-extension-manage-headers</module>
     <module>syndesis-extension-rng-error</module>
