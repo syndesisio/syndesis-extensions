@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+  <route id="log-body-prefix-xml">
+    <from uri="direct:log-xml"/>
+    <choice>
+      <when>
+        <simple>${header.prefix} != ''</simple>
+        <log message="${header.prefix} ${body}"/>
+      </when>
+      <otherwise>
+        <log message="Output ${body}"/>
+      </otherwise>
+    </choice>
+  </route>
+</routes>

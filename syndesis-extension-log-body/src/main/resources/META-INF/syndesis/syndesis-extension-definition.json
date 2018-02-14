@@ -1,0 +1,40 @@
+{
+  "actions": [
+    {
+      "actionType": "step",
+      "id": "Log-body",
+      "name": "Log Body",
+      "description": "A simple xml Body Log with a prefix",
+      "tags": [
+        "xml"
+      ],
+      "descriptor": {
+        "kind": "ENDPOINT",
+        "entrypoint": "direct:log-xml",
+        "inputDataShape": {
+          "kind": "any"
+        },
+        "outputDataShape": {
+          "kind": "any"
+        },
+      "propertyDefinitionSteps" : [ {
+        "description" : "Define your Log message",
+        "name" : "Log Body",
+        "properties" : {
+          "prefix" : {
+            "componentProperty" : false,
+            "deprecated" : false,
+            "description" : "The Log body prefix message",
+            "displayName" : "Log Prefix",
+            "javaType" : "String",
+            "kind" : "parameter",
+            "required" : false,
+            "secret" : false,
+            "type" : "string"
+          }
+        }
+      } ]
+      }
+    }
+  ]
+}
