@@ -44,6 +44,7 @@
     <module>syndesis-extension-rng-error</module>
     <module>syndesis-extension-script</module>
     <module>syndesis-extension-threads</module>
+    <module>syndesis-extension-throttle</module>
   </modules>
 
 </project>
