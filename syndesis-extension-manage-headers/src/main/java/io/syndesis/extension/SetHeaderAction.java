@@ -10,8 +10,8 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "addHeader", name = "Add Header", description = "Add an header")
-public class AddHeaderExtension implements SyndesisStepExtension {
+@SyndesisExtensionAction(id = "setHeader", name = "Set Header", description = "Set an header")
+public class SetHeaderAction implements SyndesisStepExtension {
 
     // ************************
     // Extension Properties
