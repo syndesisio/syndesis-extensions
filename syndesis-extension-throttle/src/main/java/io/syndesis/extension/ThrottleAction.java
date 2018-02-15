@@ -30,8 +30,9 @@ public class ThrottleAction implements SyndesisStepExtension {
         displayName = "Time Period Milliseconds",
         description = "Time Period in milliseconds in which the throttle will work",
         type = "long" ,
-        required = true)
-    private long timePeriodMillis = 1000L;
+        defaultValue = "1000",
+        required = false)
+    private long timePeriodMillis = 1000;
 
     // ************************
     // Extension
@@ -57,7 +58,7 @@ public class ThrottleAction implements SyndesisStepExtension {
     public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(maximumRequestCount, "maximumRequestCount");
-        ObjectHelper.notNull(timePeriodMillis, "timePeriodMillis");
+
         return Optional.of(route.throttle(maximumRequestCount).timePeriodMillis(timePeriodMillis));
     }
 }
