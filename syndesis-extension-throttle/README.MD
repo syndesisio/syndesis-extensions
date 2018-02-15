@@ -1,11 +1,10 @@
-# Threads Extension
+# Throttle Extension
 
-This is a simple Syndesis Extension to set Threads EIP.
+This is a simple Syndesis Extension to set Throttle EIP.
 
 The extension exposes one configurable field:
-- **poolsize** Minimum number of threads in the pool (and initial pool size)
-- **maxpoolsize** Maximum number of threads in the pool
-- **threadname** The Thread name
+- **maxRequestCount** Maximum Request Count in the time period
+- **timePeriodMilliseconds** Time window in which throttle is applied
 
 ![Screenshot](screenshot.png)
 
