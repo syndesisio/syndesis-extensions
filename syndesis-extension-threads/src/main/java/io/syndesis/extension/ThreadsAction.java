@@ -11,7 +11,7 @@ import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
 @SyndesisExtensionAction(id = "threads", name = "Threads", description = "Use the Threads EIP")
-public class ThreadsExtension implements SyndesisStepExtension {
+public class ThreadsAction implements SyndesisStepExtension {
 
     // ************************
     // Extension Properties
