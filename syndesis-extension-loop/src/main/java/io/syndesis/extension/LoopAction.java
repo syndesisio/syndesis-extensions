@@ -11,7 +11,7 @@ import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
 @SyndesisExtensionAction(id = "loop", name = "Loop", description = "Add a loop to your exchange")
-public class LoopExtension implements SyndesisStepExtension {
+public class LoopAction implements SyndesisStepExtension {
 
     // ************************
     // Extension Properties
