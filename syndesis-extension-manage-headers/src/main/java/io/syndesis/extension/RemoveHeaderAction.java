@@ -11,7 +11,7 @@ import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
 @SyndesisExtensionAction(id = "removeHeader", name = "Remove Header", description = "Remove an header")
-public class RemoveHeaderExtension implements SyndesisStepExtension {
+public class RemoveHeaderAction implements SyndesisStepExtension {
 
     // ************************
     // Extension Properties
