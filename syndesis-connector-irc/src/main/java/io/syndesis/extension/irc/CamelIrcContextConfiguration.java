@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.syndesis.extension;
+package io.syndesis.extension.irc;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 import io.syndesis.integration.component.proxy.ComponentProxyComponent;
 import org.apache.camel.CamelContext;
@@ -21,11 +26,6 @@ import org.apache.camel.component.irc.IrcEndpoint;
 import org.apache.camel.spring.boot.CamelContextConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Custom behavior to configure Camel Endpoints, after the CamelContext has started, due to mismatch in current Syndeis/Camel lifecycle.

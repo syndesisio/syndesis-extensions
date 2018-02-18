@@ -1,23 +1,19 @@
-package io.syndesis.extension;
+package io.syndesis.extension.threads;
 
 import java.util.Map;
 import java.util.Optional;
 
-import io.syndesis.extension.api.SyndesisActionProperty;
-import io.syndesis.extension.api.SyndesisExtensionAction;
-import io.syndesis.extension.api.SyndesisStepExtension;
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.Action;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
 import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "threads", name = "Threads", description = "Use the Threads EIP")
-public class ThreadsAction implements SyndesisStepExtension {
-
-    // ************************
-    // Extension Properties
-    // ************************
+@Action(id = "threads", name = "Threads", description = "Use the Threads EIP", tags = { "threads", "extension", "eip"})
+public class ThreadsAction implements Step {
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "poolsize",
         displayName = "Pool Size",
         description = "Minimum number of threads in the pool (and initial pool size)",
@@ -25,7 +21,7 @@ public class ThreadsAction implements SyndesisStepExtension {
         required = true)
     private int poolsize;
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "maxpoolsize",
         displayName = "Maximum Pool size",
         description = "Maximum number of threads in the pool",
@@ -33,18 +29,13 @@ public class ThreadsAction implements SyndesisStepExtension {
         required = true)
     private int maxPoolSize;
     
-    
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "threadname",
         displayName = "Thread Name",
         description = "The Thread name",
         type = "string" ,
         required = true)
     private String threadName;
-
-    // ************************
-    // Extension
-    // ************************
 
 	public int getPoolsize() {
 		return poolsize;

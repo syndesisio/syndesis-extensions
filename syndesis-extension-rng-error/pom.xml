@@ -60,9 +60,6 @@
         <groupId>io.syndesis.extension</groupId>
         <artifactId>extension-maven-plugin</artifactId>
         <version>${syndesis.version}</version>
-        <configuration>
-          <tags>errors,testing</tags>
-        </configuration>
         <executions>
           <execution>
             <goals>

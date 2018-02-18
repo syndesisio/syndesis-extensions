@@ -1,33 +1,25 @@
-package io.syndesis.extension;
+package io.syndesis.extension.loop;
 
 import java.util.Map;
 import java.util.Optional;
 
-import io.syndesis.extension.api.SyndesisActionProperty;
-import io.syndesis.extension.api.SyndesisExtensionAction;
-import io.syndesis.extension.api.SyndesisStepExtension;
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.Action;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
 import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "loop", name = "Loop", description = "Add a loop to your exchange")
-public class LoopAction implements SyndesisStepExtension {
-
-    // ************************
-    // Extension Properties
-    // ************************
+@Action(id = "loop", name = "Loop", description = "Add a loop to your exchange", tags = { "loop", "extension"})
+public class LoopAction implements Step {
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "cycles",
         displayName = "Cycles",
         description = "The loop cycles to apply to the route",
         type = "int" ,
         required = true)
     private int cycles;
-
-    // ************************
-    // Extension
-    // ************************
     
 	public int getCycles() {
 		return cycles;
