@@ -22,7 +22,7 @@
   <groupId>io.syndesis.extensions</groupId>
   <artifactId>syndesis-extension-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000002</version>
 
   <name>Syndesis Extensions Parent</name>
   <description>A Collection of Extensions for Syndesis</description>
