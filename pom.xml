@@ -27,8 +27,15 @@
   <name>Syndesis Extensions Parent</name>
   <description>A Collection of Extensions for Syndesis</description>
 
-  <!-- This is just not a parent pom -->
-  <!-- It's just a collector for building all child projects at once -->
+  <properties>
+    <syndesis.version>1.3-SNAPSHOT</syndesis.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <java.version>1.8</java.version>
+    <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+  </properties>
 
   <modules>
     <!--connectors-->
