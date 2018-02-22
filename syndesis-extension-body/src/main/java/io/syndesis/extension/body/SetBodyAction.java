@@ -15,13 +15,13 @@ import io.syndesis.extension.api.annotations.ConfigurationProperty;
 public class SetBodyAction implements Step {
 
 	@ConfigurationProperty(name = "body", displayName = "Body", description = "The body to set", type = "string", required = true)
-	private int body;
+	private String body;
 
-	public int getBody() {
+	public String getBody() {
 		return body;
 	}
 
-	public void setBody(int body) {
+	public void setBody(String body) {
 		this.body = body;
 	}
 
