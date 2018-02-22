@@ -1,10 +1,9 @@
-# Add Header Extension
+# Set Body Extension
 
-This is a simple Syndesis Extension to add an header to your exchange.
+This is a simple Syndesis Extension to set the body of your exchange.
 
 The extension exposes two configurable fields:
-- **name** the header name
-- **value** the header value
+- **body** the body name
 
 ![Screenshot](screenshot.png)
 
