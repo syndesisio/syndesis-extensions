@@ -1,20 +1,20 @@
-package io.syndesis.extension;
+package io.syndesis.extension.error.rng;
 
-import io.syndesis.extension.api.SyndesisExtensionAction;
+import java.util.Map;
+import java.util.Random;
+
+import io.syndesis.extension.api.annotations.Action;
 import org.apache.camel.Body;
 import org.apache.camel.Exchange;
 import org.apache.camel.Handler;
 import org.apache.camel.Headers;
 import org.apache.camel.RuntimeCamelException;
 
-import java.util.Map;
-import java.util.Random;
-
-@SyndesisExtensionAction(id = "rng-error", name = "Random Error", description = "Generate a Random Error")
-public class RngErrorExtension {
+@Action(id = "rng-error", name = "Random Error", description = "Generate a Random Error", tags = { "error", "testing", "extension"})
+public class RngErrorAction {
 
     @Handler
-    public void runScript(@Body String body, @Headers Map headers, Exchange exchange) {
+    public void handle(@Body String body, @Headers Map headers, Exchange exchange) {
         Random random = new Random(System.currentTimeMillis());
         if( random.nextBoolean() ) {
             throw new RuntimeCamelException("Random error.. try your luck again next time.");

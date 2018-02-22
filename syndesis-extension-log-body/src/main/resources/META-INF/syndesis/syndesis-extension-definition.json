@@ -11,6 +11,7 @@
       "descriptor": {
         "kind": "ENDPOINT",
         "entrypoint": "direct:log-xml",
+        "resource": "classpath:META-INF/syndesis/extensions/log-body-action.xml",
         "inputDataShape": {
           "kind": "any"
         },

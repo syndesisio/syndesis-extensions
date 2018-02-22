@@ -1,23 +1,19 @@
-package io.syndesis.extension;
+package io.syndesis.extension.throttle;
 
 import java.util.Map;
 import java.util.Optional;
 
-import io.syndesis.extension.api.SyndesisActionProperty;
-import io.syndesis.extension.api.SyndesisExtensionAction;
-import io.syndesis.extension.api.SyndesisStepExtension;
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.Action;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
 import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "throttle", name = "Throttle", description = "Use the Throttle EIP")
-public class ThrottleAction implements SyndesisStepExtension {
-
-    // ************************
-    // Extension Properties
-    // ************************
+@Action(id = "throttle", name = "Throttle", description = "Use the Throttle EIP", tags = { "throttle", "extension", "eip"})
+public class ThrottleAction implements Step {
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "maximumRequestCount",
         displayName = "Maximum Request count",
         description = "Maximum messages in the default time period (1000 milliseconds)",
@@ -25,7 +21,7 @@ public class ThrottleAction implements SyndesisStepExtension {
         required = true)
     private long maximumRequestCount;
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "timePeriodMillis",
         displayName = "Time Period Milliseconds",
         description = "Time Period in milliseconds in which the throttle will work",
@@ -33,10 +29,6 @@ public class ThrottleAction implements SyndesisStepExtension {
         defaultValue = "1000",
         required = false)
     private long timePeriodMillis = 1000;
-
-    // ************************
-    // Extension
-    // ************************
 
 	public long getMaximumRequestCount() {
 		return maximumRequestCount;

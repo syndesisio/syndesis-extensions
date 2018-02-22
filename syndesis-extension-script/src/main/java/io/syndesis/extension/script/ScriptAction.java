@@ -1,4 +1,4 @@
-package io.syndesis.extension;
+package io.syndesis.extension.script;
 
 import java.util.Map;
 import java.util.Optional;
@@ -7,46 +7,38 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.SimpleBindings;
 
-import io.syndesis.extension.api.SyndesisActionProperty;
-import io.syndesis.extension.api.SyndesisExtensionAction;
-import io.syndesis.extension.api.SyndesisStepExtension;
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.Action;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 import org.apache.camel.util.StringHelper;
 
-@SyndesisExtensionAction(id = "script", name = "Script", description = "Run Scripts")
-public class ScriptExtension implements SyndesisStepExtension {
+@Action(id = "script", name = "Script", description = "Run Scripts", tags = { "scripting", "extension"})
+public class ScriptAction implements Step {
     public enum Language {
         groovy,
         javascript
     }
 
-    // ************************
-    // Extension Properties
-    // ************************
+    private ScriptEngine engine;
 
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "language",
         displayName = "Language",
         description = "The scripting language",
         required = true)
     private Language language;
 
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "script",
         displayName = "Script",
         description = "The script code. You can also refer to the following variables, already in scope: body, message, exchange, sys, env.",
         type = "textarea" ,
         required = true)
     private String script;
-
-    private ScriptEngine engine;
-
-    // ************************
-    // Accessors
-    // ************************
 
     public Language getLanguage() {
         return language;
@@ -68,10 +60,6 @@ public class ScriptExtension implements SyndesisStepExtension {
     public void setScript(String script) {
         this.script =  script;
     }
-
-    // ************************
-    // Extension
-    // ************************
 
     @Override
     public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {

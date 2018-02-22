@@ -25,7 +25,7 @@ atlassian-ide-plugin.xml
 classes/
 build/
 build-gradle/
-log/
+./log/
 logs/
 target/
 data/

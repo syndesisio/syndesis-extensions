@@ -1,33 +1,25 @@
-package io.syndesis.extension;
+package io.syndesis.extension.delay;
 
 import java.util.Map;
 import java.util.Optional;
 
-import io.syndesis.extension.api.SyndesisActionProperty;
-import io.syndesis.extension.api.SyndesisExtensionAction;
-import io.syndesis.extension.api.SyndesisStepExtension;
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.Action;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
 import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "delay", name = "Delay", description = "Add a delay to your exchange")
-public class DelayAction implements SyndesisStepExtension {
-
-    // ************************
-    // Extension Properties
-    // ************************
+@Action(id = "delay", name = "Delay", description = "Add a delay to your exchange", tags = { "delay", "extension"})
+public class DelayAction implements Step {
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "delay",
         displayName = "Delay",
         description = "The delay to apply to the route",
         type = "long" ,
         required = true)
     private long delay;
-
-    // ************************
-    // Extension
-    // ************************
 
     public long getDelay() {
 		return delay;

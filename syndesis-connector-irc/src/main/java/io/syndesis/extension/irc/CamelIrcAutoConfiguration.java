@@ -1,4 +1,4 @@
-package io.syndesis.extension;
+package io.syndesis.extension.irc;
 
 import org.apache.camel.spring.boot.CamelAutoConfiguration;
 import org.apache.camel.spring.boot.CamelContextConfiguration;

@@ -1,23 +1,19 @@
-package io.syndesis.extension;
+package io.syndesis.extension.header;
 
 import java.util.Map;
 import java.util.Optional;
 
-import io.syndesis.extension.api.SyndesisActionProperty;
-import io.syndesis.extension.api.SyndesisExtensionAction;
-import io.syndesis.extension.api.SyndesisStepExtension;
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.Action;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
 import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "setHeader", name = "Set Header", description = "Set an header")
-public class SetHeaderAction implements SyndesisStepExtension {
-
-    // ************************
-    // Extension Properties
-    // ************************
+@Action(id = "setHeader", name = "Set Header", description = "Set an header", tags = { "header", "extension"})
+public class SetHeaderAction implements Step {
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "name",
         displayName = "Header name",
         description = "The header name to work on",
@@ -25,7 +21,7 @@ public class SetHeaderAction implements SyndesisStepExtension {
         required = true)
     private String name;
 
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "value",
         displayName = "Header Value",
         description = "The header value",
@@ -49,10 +45,6 @@ public class SetHeaderAction implements SyndesisStepExtension {
 	public void setValue(String value) {
 		this.value = value;
 	}
-
-    // ************************
-    // Extension
-    // ************************
 
     @Override
     public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {

@@ -1,23 +1,19 @@
-package io.syndesis.extension;
+package io.syndesis.extension.header;
 
 import java.util.Map;
 import java.util.Optional;
 
-import io.syndesis.extension.api.SyndesisActionProperty;
-import io.syndesis.extension.api.SyndesisExtensionAction;
-import io.syndesis.extension.api.SyndesisStepExtension;
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.Action;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
 import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.util.ObjectHelper;
 
-@SyndesisExtensionAction(id = "removeHeader", name = "Remove Header", description = "Remove an header")
-public class RemoveHeaderAction implements SyndesisStepExtension {
-
-    // ************************
-    // Extension Properties
-    // ************************
+@Action(id = "removeHeader", name = "Remove Header", description = "Remove an header", tags = { "header", "extension"})
+public class RemoveHeaderAction implements Step {
     
-    @SyndesisActionProperty(
+    @ConfigurationProperty(
         name = "name",
         displayName = "Header name",
         description = "The header name to remove",
@@ -33,10 +29,6 @@ public class RemoveHeaderAction implements SyndesisStepExtension {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-    // ************************
-    // Extension
-    // ************************
 
     @Override
     public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
