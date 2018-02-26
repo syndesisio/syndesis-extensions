@@ -1,9 +1,9 @@
-# Delay Extension
+# Json Dataformat Extension
 
-This is a simple Syndesis Extension to add a delay to your route.
+This is Syndesis Extension to marshal/unmarshall using the json Dataformat
 
 The extension exposes one configurable field:
-- **delay** the delay to apply
+- **kind** the kind of library. Possible values: Jackson, Fastjson, Xstream, Gson
 
 ![Screenshot](screenshot.png)
 
