@@ -19,7 +19,8 @@ public class JsonUnmarshalAction implements Step {
 		Jackson, 
 		Gson, 
 		Xstream,
-		Fastjson
+		Fastjson,
+		Johnzon
 	}
 
 	@ConfigurationProperty(name = "kind", 
