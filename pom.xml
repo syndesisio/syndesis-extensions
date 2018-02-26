@@ -46,6 +46,7 @@
     <!--step extensions-->
     <module>syndesis-extension-body</module>
     <module>syndesis-extension-delay</module>
+    <module>syndesis-extension-json-dataformat</module>
     <module>syndesis-extension-log</module>
     <module>syndesis-extension-log-body</module>
     <module>syndesis-extension-loop</module>
