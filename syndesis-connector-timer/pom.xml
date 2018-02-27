@@ -23,13 +23,13 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000003</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-connector-timer</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000003</version>
 
   <name>Timer</name>
   <description>Timer Extension Connector for Syndesis</description>
