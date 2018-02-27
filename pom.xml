@@ -55,6 +55,7 @@
     <module>syndesis-extension-script</module>
     <module>syndesis-extension-threads</module>
     <module>syndesis-extension-throttle</module>
+    <module>syndesis-extension-yaml-dataformat</module>
   </modules>
 
 </project>
