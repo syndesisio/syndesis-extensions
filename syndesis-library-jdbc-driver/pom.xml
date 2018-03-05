@@ -27,12 +27,12 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>syndesis-library-example</artifactId>
+    <artifactId>syndesis-library-jdbc</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
-    <name>Example Library</name>
-    <description>Syndesis Extension for adding a custom Library</description>
+    <name>Example JDBC Driver Library</name>
+    <description>Syndesis Extension for adding a custom JDBC Driver</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -62,10 +62,10 @@
     <dependencies>
         <dependency>
             <groupId>com.company</groupId>
-            <artifactId>sample</artifactId>
+            <artifactId>jdbc-driver</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/sample-jar.jar</systemPath>
+            <systemPath>${project.basedir}/lib/jdbc-driver-1.0.jar</systemPath>
         </dependency>
     </dependencies>
 

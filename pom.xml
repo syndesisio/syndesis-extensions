@@ -59,7 +59,7 @@
     <module>syndesis-extension-yaml-dataformat</module>
 
     <!--library extensions-->
-    <module>syndesis-library-example</module>
+    <module>syndesis-library-jdbc-driver</module>
   </modules>
 
 </project>
