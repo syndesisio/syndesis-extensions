@@ -43,6 +43,7 @@
     <module>syndesis-connector-log</module>
     <module>syndesis-connector-telegram</module>
     <module>syndesis-connector-timer</module>
+    <module>syndesis-connector-webhook</module>
 
     <!--step extensions-->
     <module>syndesis-extension-body</module>
