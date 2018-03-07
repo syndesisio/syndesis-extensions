@@ -4,9 +4,10 @@ This connector allows to expose a HTTP endpoint in order to receive triggers fro
 
 ## Usage
 
-Syndesis integrations are not exposed automatically to receive HTTP calls.
+The webhook extension can be added to Syndesis and (after creating a default connection) used as starting point in integrations.
 
-You need to expose them manually using the following script:
+Syndesis integrations are not exposed automatically to receive HTTP calls. 
+After you create the integration on Syndesis, you need to expose it manually using the following script:
 
 ```
 INTEGRATION=put-the-name-of-your-integration-here
