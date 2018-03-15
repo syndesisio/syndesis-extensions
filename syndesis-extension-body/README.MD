@@ -1,9 +1,9 @@
-# Loop Extension
+# Set Body Extension
 
-This is a simple Syndesis Extension to add a loop to your route.
+This is a simple Syndesis Extension to set the body of your exchange
 
 The extension exposes one configurable field:
-- **cycles** the loop cycles to apply
+- **Body** the Body to set
 
 ![Screenshot](screenshot.png)
 
