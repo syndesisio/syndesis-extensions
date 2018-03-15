@@ -29,7 +29,6 @@
 
   <artifactId>syndesis-connector-timer</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
 
   <name>Timer</name>
   <description>Timer Extension Connector for Syndesis</description>
@@ -42,9 +41,6 @@
 
     <!-- plugins -->
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-
-    <!-- dependencies -->
-    <syndesis.version>1.3-SNAPSHOT</syndesis.version>
   </properties>
 
   <dependencyManagement>
