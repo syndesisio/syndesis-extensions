@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000013</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-delay</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000013</version>
   <name>Delay</name>
   <description>Add a delay</description>
   <packaging>jar</packaging>
