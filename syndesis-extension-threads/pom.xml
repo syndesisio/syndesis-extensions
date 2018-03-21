@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000016</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-threads</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000016</version>
   <name>Threads</name>
   <description>Define the Threads EIP</description>
   <packaging>jar</packaging>
