@@ -22,13 +22,13 @@
   <groupId>io.syndesis.extensions</groupId>
   <artifactId>syndesis-extension-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000015</version>
 
   <name>Syndesis Extensions Parent</name>
   <description>A Collection of Extensions for Syndesis</description>
 
   <properties>
-    <syndesis.version>1.3-SNAPSHOT</syndesis.version>
+    <syndesis.version>1.3.3.fuse-000001</syndesis.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
