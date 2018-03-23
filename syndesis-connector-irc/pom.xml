@@ -23,13 +23,13 @@
     <parent>
         <groupId>io.syndesis.extensions</groupId>
         <artifactId>syndesis-extension-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.0.fuse-000018</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>syndesis-connector-irc</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000018</version>
 
     <name>IRC</name>
     <description>IRC Extension Connector for Syndesis</description>
