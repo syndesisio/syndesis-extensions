@@ -27,7 +27,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>syndesis-library-jdbc</artifactId>
+    <artifactId>syndesis-library-jdbc-driver</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
