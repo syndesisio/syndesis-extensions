@@ -34,7 +34,28 @@
         },
         "configuredProperties": {
           "type": "bots"
-        }
+        },
+        "propertyDefinitionSteps": [
+          {
+            "description": "Chat id",
+            "name": "chatId",
+            "properties": {
+              "chatId": {
+                "componentProperty": false,
+                "deprecated": false,
+                "description": "The telegram's Chat Id, if not set will use CamelTelegramChatId from the incoming exchange.",
+                "displayName": "Chat Id",
+                "javaType": "String",
+                "kind": "parameter",
+                "required": false,
+                "secret": false,
+                "type": "string",
+                "tags": [],
+                "enum": []
+              }
+            }
+          }
+        ]
       }
     },
     {
