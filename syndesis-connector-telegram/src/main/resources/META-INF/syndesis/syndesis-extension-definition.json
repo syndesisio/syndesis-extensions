@@ -34,7 +34,28 @@
         },
         "configuredProperties": {
           "type": "bots"
-        }
+        },
+        "propertyDefinitionSteps": [
+          {
+            "description": "Chat id",
+            "name": "chatId",
+            "properties": {
+              "chatId": {
+                "componentProperty": false,
+                "deprecated": false,
+                "description": "The telegram's Chat Id.",
+                "displayName": "Chat Id",
+                "javaType": "String",
+                "kind": "parameter",
+                "required": false,
+                "secret": false,
+                "type": "string",
+                "tags": [],
+                "enum": []
+              }
+            }
+          }
+        ]
       }
     },
     {
