@@ -13,12 +13,12 @@
       "deprecated": false,
       "secret": true,
       "componentProperty": false,
-      "description": "Telegram Bot Authorization Token"
+      "description": "Telegram Bot Authorization Token that can be obtained from the Telegram BotFather"
     }
   },
   "actions": [
     {
-      "name": "Chat Messages",
+      "name": "Receive Messages",
       "description": "Receive all messages sent to the chat bot",
       "id": "io.syndesis:telegram-chat-from-action",
       "pattern": "From",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "name": "Send a chat Messages",
+      "name": "Send a Text Message",
       "description": "Send a messages to the chat (through the bot).",
       "id": "io.syndesis:telegram-chat-to-action",
       "pattern": "To",
@@ -68,7 +68,7 @@
         "componentScheme": "telegram",
         "inputDataShape": {
           "kind": "java",
-          "type": "java.lang.String"
+          "type": "org.apache.camel.component.telegram.model.OutgoingTextMessage"
         },
         "outputDataShape": {
           "kind": "none"
