@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000020</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-rng-error</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000020</version>
   <name>Random Error</name>
   <description>An extension to Generate Random Errors</description>
   <packaging>jar</packaging>
