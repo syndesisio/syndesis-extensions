@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000026</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-json-dataformat</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000026</version>
   <name>Json Dataformat</name>
   <description>Marshall/Unmarshall with JSON</description>
   <packaging>jar</packaging>
