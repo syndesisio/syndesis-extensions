@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000027</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-script</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000027</version>
   <name>Script</name>
   <description>An extension to Syndesis to invoke Scripts using JSR 223
     javax.script API
