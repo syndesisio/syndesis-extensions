@@ -35,6 +35,8 @@ hs_err_pid*
 .checkstyle
 .pmd
 .pmdruleset.xml
+.factorypath
+.sts4-cache/
 
 # System Files
 .DS_Store
