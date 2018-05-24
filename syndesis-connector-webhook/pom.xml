@@ -23,7 +23,7 @@
     <parent>
         <groupId>io.syndesis.extensions</groupId>
         <artifactId>syndesis-extension-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.0.fuse-000029</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
