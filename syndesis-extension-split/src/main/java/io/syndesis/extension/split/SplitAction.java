@@ -46,7 +46,7 @@ public class SplitAction implements Step {
     }
 
     @Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         String languageName = language;
         String expressionDefinition = expression;
 
