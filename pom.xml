@@ -35,6 +35,8 @@
 
     <java.version>1.8</java.version>
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+
+    <syndesisServerUrl.disableSSLvalidation>false</syndesisServerUrl.disableSSLvalidation>
   </properties>
 
   <modules>
@@ -64,4 +66,103 @@
     <module>syndesis-library-jdbc-driver</module>
   </modules>
 
+  <build>
+		<plugins>
+      <plugin>
+        <groupId>org.codehaus.gmavenplus</groupId>
+        <artifactId>gmavenplus-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>get-syndesis-version</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <scripts>
+            <script><![CDATA[
+                  //XXX: usefull to disableSSLcertValidation()
+                  import javax.net.ssl.HostnameVerifier
+                  import javax.net.ssl.HttpsURLConnection
+                  import javax.net.ssl.SSLContext
+                  import javax.net.ssl.TrustManager
+                  import javax.net.ssl.X509TrustManager
+                  log.debug "START getting syndesis version from a running Syndesis server."
+                  
+                  def syndesisServerUrl = getPropertyValue('syndesisServerUrl')
+                  log.debug "syndesisServerUrl value = $syndesisServerUrl"
+
+                  if( syndesisServerUrl != null ) {
+                    boolean disableSSLvalidation = false                    
+                    if(getPropertyValue('syndesisServerUrl.disableSSLvalidation') != null && getPropertyValue('syndesisServerUrl.disableSSLvalidation').toBoolean()) {
+                      disableSSLvalidation = true
+                    }
+                    log.info "disableSSLvalidation: $disableSSLvalidation"
+                    if( disableSSLvalidation ) {
+                      disableSSLcertValidation()
+                      log.debug "SSL validation disabled to call /api/v1/version"
+                    }
+                    
+                    String syndesisVersionUrl = syndesisServerUrl+"/api/v1/version"
+                    log.info "About to call GET on $syndesisVersionUrl" 
+                    def version = null
+                    try {
+                      version = new URL(syndesisVersionUrl).getText(requestProperties: [Accept: 'text/plain'])
+                      String syndesisVesrion = new String(version)
+                      project.properties.setProperty('syndesis.version', syndesisVesrion)
+                      log.info "syndesis.version set to: $syndesisVesrion"
+                    } catch(Exception ex) {
+                      log.error "Error during syndesis version GET from $syndesisVersionUrl"
+                      ex.printStackTrace()
+                      throw ex
+                    } finally {
+                      log.info "Called GET on $syndesisVersionUrl with result $version"
+                    }
+                  } else {
+                    log.info "syndesisServerUrl proerty not set, the syndesis.version from pom.xml will be used."
+                  }
+
+                  void disableSSLcertValidation() {
+                    def nullTrustManager = [
+                        checkClientTrusted: { chain, authType ->  },
+                        checkServerTrusted: { chain, authType ->  },
+                        getAcceptedIssuers: { null }
+                    ]
+
+                    def nullHostnameVerifier = [
+                        verify: { hostname, session -> true }
+                    ]
+
+                    SSLContext sc = SSLContext.getInstance("SSL")
+                    sc.init(null, [nullTrustManager as X509TrustManager] as TrustManager[], null)
+                    HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory())
+                    HttpsURLConnection.setDefaultHostnameVerifier(nullHostnameVerifier as HostnameVerifier) 
+                  }
+
+                  String getPropertyValue(String name) {
+                      def value = session.userProperties[name]
+                      if (value != null) return value //property was defined from command line e.g.: -DpropertyName=value
+                      return project.properties[name]
+                  }
+
+                  log.debug "END getting syndesis version from a running Syndesis server."
+            ]]></script>
+          </scripts>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <!-- any version of Groovy \>= 1.5.0 should work here -->
+            <version>2.4.12</version>
+            <scope>runtime</scope>
+          </dependency>
+        </dependencies>
+      </plugin>
+	  </plugins>
+  </build>
+  
 </project>
