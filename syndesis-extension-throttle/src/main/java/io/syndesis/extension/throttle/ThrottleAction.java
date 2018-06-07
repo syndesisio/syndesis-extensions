@@ -47,7 +47,7 @@ public class ThrottleAction implements Step {
 	}
 
 	@Override
-    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(maximumRequestCount, "maximumRequestCount");
 
