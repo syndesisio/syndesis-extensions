@@ -1,0 +1,82 @@
+{
+    "schemaVersion": "v1",
+    "properties": {
+        "masterUrl": {
+            "kind": "property",
+            "displayName": "Master URL",
+            "group": "security",
+            "label": "Master URL",
+            "required": true,
+            "type": "string",
+            "javaType": "java.lang.String",
+            "defaultValue": "https://kubernetes.default/",
+            "tags": [],
+            "deprecated": false,
+            "secret": false,
+            "componentProperty": false,
+            "description": "The OpenShift user name to log in with",
+            "order": 1
+        },
+        "oauthToken":{
+            "kind": "property",
+            "displayName": "Oauth Token",
+            "group": "security",
+            "label": "Oauth Token",
+            "required": true,
+            "type": "string",
+            "javaType": "java.lang.String",
+            "tags": [],
+            "deprecated": false,
+            "secret": true,
+            "componentProperty": false,
+            "description": "The OpenShift Oauth Token",
+            "order": 2
+        }
+      },    
+    "actions": [
+        {
+            "name": "Pod Event",
+            "description": "React to an Openshift Pod Events",
+            "id": "io.syndesis:openshift-event",
+            "pattern": "From",
+            "actionType": "connector",
+            "descriptor": {
+                "componentScheme": "kubernetes",
+                "inputDataShape": {
+                    "kind": "any"
+                },
+                "outputDataShape": {
+                    "name": "Pod",
+                    "description": "OpenShift Pod",
+                    "kind": "java",
+                    "type": "io.fabric8.kubernetes.api.model.Pod"
+                },
+                "configuredProperties": {
+                    "category": "pods",
+                    "trustCerts": true
+                },
+                "propertyDefinitionSteps": [
+                    {
+                        "name": "properties",
+                        "description": "Properties",
+                        "properties": {
+                            "namespace": {
+                                "componentProperty": false,
+                                "deprecated": false,
+                                "description": "Namespace",
+                                "displayName": "Namespace",
+                                "javaType": "string",
+                                "kind": "parameter",
+                                "required": true,
+                                "secret": false,
+                                "type": "string",
+                                "tags": [],
+                                "enum": []
+                            }                            
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
