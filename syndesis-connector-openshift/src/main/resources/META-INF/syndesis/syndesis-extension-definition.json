@@ -41,7 +41,7 @@
             "pattern": "From",
             "actionType": "connector",
             "descriptor": {
-                "componentScheme": "kubernetes",
+                "componentScheme": "kubernetes-pods",
                 "inputDataShape": {
                     "kind": "any"
                 },
@@ -52,7 +52,6 @@
                     "type": "io.fabric8.kubernetes.api.model.Pod"
                 },
                 "configuredProperties": {
-                    "category": "pods",
                     "trustCerts": true
                 },
                 "propertyDefinitionSteps": [
