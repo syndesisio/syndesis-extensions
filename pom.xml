@@ -72,6 +72,7 @@
     <module>syndesis-connector-telegram</module>
     <module>syndesis-connector-timer</module>
     <module>syndesis-connector-webhook</module>
+    <module>syndesis-connector-openshift</module>
 
     <!--step extensions-->
     <module>syndesis-extension-body</module>
