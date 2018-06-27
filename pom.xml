@@ -85,6 +85,7 @@
     <module>syndesis-extension-rng-error</module>
     <module>syndesis-extension-script</module>
     <module>syndesis-extension-split</module>
+    <module>syndesis-extension-telegrambot</module>
     <module>syndesis-extension-threads</module>
     <module>syndesis-extension-throttle</module>
     <module>syndesis-extension-yaml-dataformat</module>
