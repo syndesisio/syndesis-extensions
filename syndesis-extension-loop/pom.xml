@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000030</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-loop</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000030</version>
   <name>Loop</name>
   <description>Add a loop</description>
   <packaging>jar</packaging>
