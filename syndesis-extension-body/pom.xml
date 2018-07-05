@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000033</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-body</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000033</version>
   <name>Set Body</name>
   <description>Set a body</description>
   <packaging>jar</packaging>
