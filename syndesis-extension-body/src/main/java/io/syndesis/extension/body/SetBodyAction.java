@@ -26,11 +26,11 @@ public class SetBodyAction implements Step {
 	}
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
-		ObjectHelper.notNull(route, "route");
+        public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> definition, Map<String, Object> parameters) {
+		ObjectHelper.notNull(definition, "route");
 		ObjectHelper.notNull(body, "body");
 
-		route.setBody().constant(body);
+		definition.setBody().constant(body);
 		return Optional.empty();
 	}
 }
