@@ -23,13 +23,13 @@
     <parent>
         <groupId>io.syndesis.extensions</groupId>
         <artifactId>syndesis-extension-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.0.fuse-000034</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>syndesis-library-jdbc-driver</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000034</version>
 
     <name>Example JDBC Driver Library</name>
     <description>Syndesis Extension for adding a custom JDBC Driver</description>

@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000034</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-log</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000034</version>
   <name>Log</name>
   <description>An extension to Syndesis to do Logging</description>
   <packaging>jar</packaging>
