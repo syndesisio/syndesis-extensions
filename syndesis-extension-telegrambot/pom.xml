@@ -8,12 +8,12 @@
   <parent>
     <groupId>io.syndesis.extensions</groupId>
     <artifactId>syndesis-extension-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.fuse-000035</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>syndesis-extension-telegrambot</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0.fuse-000035</version>
   <name>TelegramBot</name>
   <description>An extension to Syndesis to easily implement telegram bots.</description>
   <packaging>jar</packaging>
