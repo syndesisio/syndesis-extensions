@@ -150,7 +150,7 @@
                       log.info "Called GET on $syndesisVersionUrl with result $version"
                     }
                   } else {
-                    log.info "syndesisServerUrl proerty not set, the syndesis.version from pom.xml will be used."
+                    log.info "syndesisServerUrl property not set, the syndesis.version from pom.xml will be used."
                   }
 
                   void disableSSLcertValidation() {
