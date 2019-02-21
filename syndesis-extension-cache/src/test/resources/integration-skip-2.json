@@ -1,0 +1,57 @@
+{
+  "flows": [
+    {
+      "steps": [
+        {
+          "id": "input",
+          "stepKind": "endpoint",
+          "action": {
+            "actionType": "connector",
+            "descriptor": {
+              "componentScheme": "direct",
+              "configuredProperties": {
+                "name": "in"
+              }
+            }
+          }
+        },
+        {
+          "id": "cache",
+          "stepKind": "extension",
+          "action": {
+            "actionType": "step",
+            "descriptor": {
+              "kind": "STEP",
+              "entrypoint": "io.syndesis.extension.cache.CacheAction"
+            }
+          },
+          "configuredProperties": {
+            "steps": "2"
+          }
+        },
+        {
+          "id": "this-needs-caching",
+          "stepKind": "extension",
+          "action": {
+            "actionType": "step",
+            "descriptor": {
+              "kind": "BEAN",
+              "entrypoint": "io.syndesis.extension.cache.CounterBean"
+            }
+          }
+        },
+        {
+          "id": "hello",
+          "stepKind": "extension",
+          "action": {
+            "actionType": "step",
+            "descriptor": {
+              "kind": "BEAN",
+              "entrypoint": "io.syndesis.extension.cache.HelloBean"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
