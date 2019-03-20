@@ -1,0 +1,43 @@
+{
+  "name" : "Cache",
+  "description" : "Cache the results of next step(s)",
+  "extensionId" : "io.syndesis.extensions:syndesis-extension-cache",
+  "actions" : [ {
+    "id" : "cache",
+    "name" : "Cache",
+    "description" : "Cache the next step in your exchange",
+    "descriptor" : {
+      "kind" : "STEP",
+      "entrypoint" : "io.syndesis.extension.cache.CacheAction",
+      "inputDataShape" : {
+        "kind" : "none"
+      },
+      "outputDataShape" : {
+        "kind" : "none"
+      },
+      "propertyDefinitionSteps" : [ {
+        "description" : "extension-properties",
+        "name" : "extension-properties",
+        "properties" : {
+          "steps" : {
+            "componentProperty" : false,
+            "defaultValue" : "1",
+            "deprecated" : false,
+            "description" : "The number of subsequent steps to cache.",
+            "displayName" : "Steps",
+            "javaType" : "int",
+            "kind" : "parameter",
+            "required" : false,
+            "secret" : false,
+            "type" : "int",
+            "raw" : false
+          }
+        }
+      } ]
+    },
+    "tags" : [ "extension", "step" ],
+    "actionType" : "step"
+  } ],
+  "extensionType" : "Steps",
+  "schemaVersion" : "v1"
+}

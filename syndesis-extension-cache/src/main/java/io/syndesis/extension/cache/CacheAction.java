@@ -5,10 +5,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
-import io.syndesis.extension.api.Step;
-import io.syndesis.extension.api.annotations.Action;
-import io.syndesis.extension.api.annotations.ConfigurationProperty;
-
 import org.apache.camel.AsyncCallback;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -20,7 +16,15 @@ import org.apache.camel.processor.DelegateAsyncProcessor;
 import org.apache.camel.spi.InterceptStrategy;
 import org.apache.camel.util.ObjectHelper;
 
-@Action(id = "cache", name = "Cache", description = "Cache the next step in your exchange", tags = {"step", "extension"})
+import io.syndesis.extension.api.Step;
+import io.syndesis.extension.api.annotations.ConfigurationProperty;
+
+//@Action(id = "cache",
+//        name = "Cache",
+//        description = "Cache the next step in your exchange",
+//        tags = {"step", "extension"},
+//        inputDataShape = @DataShape(kind="none"),
+//        outputDataShape = @DataShape(kind="none"))
 public class CacheAction implements Step {
 
     @ConfigurationProperty(
