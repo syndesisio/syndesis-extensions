@@ -77,6 +77,7 @@
     <!--step extensions-->
     <module>syndesis-extension-body</module>
     <module>syndesis-extension-cache</module>
+    <module>syndesis-extension-charset-converter</module>
     <module>syndesis-extension-delay</module>
     <module>syndesis-extension-json-dataformat</module>
     <module>syndesis-extension-log</module>
