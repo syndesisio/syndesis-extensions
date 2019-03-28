@@ -12,10 +12,10 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>syndesis-extension-charset-converter</artifactId>
+  <artifactId>syndesis-extension-text-converter</artifactId>
   <version>1.0.0</version>
-  <name>Charset Converter</name>
-  <description>Convert character encoding</description>
+  <name>Text Converter</name>
+  <description>Convert text to/from bytes</description>
   <packaging>jar</packaging>
 
   <dependencyManagement>
@@ -37,10 +37,14 @@
       <optional>true</optional>
     </dependency>
 
-    <!-- runtime -->
     <dependency>
       <groupId>io.syndesis.extension</groupId>
       <artifactId>extension-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
       <scope>provided</scope>
     </dependency>
   </dependencies>
