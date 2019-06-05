@@ -41,29 +41,29 @@
 
   <repositories>
     <repository>
-       <id>jboss-fuse</id>
-       <url>https://origin-repository.jboss.org/nexus/content/groups/ea</url>
+      <id>jboss-fuse</id>
+      <url>https://origin-repository.jboss.org/nexus/content/groups/ea</url>
     </repository>
     <repository>
-       <id>mrrc-redhat</id>
-       <url>https://maven.repository.redhat.com/ga</url>
+      <id>mrrc-redhat</id>
+      <url>https://maven.repository.redhat.com/ga</url>
     </repository>
   </repositories>
 
-      <pluginRepositories>
-        <pluginRepository>
-          <releases />
-          <snapshots />
-          <id>jboss_origin</id>
-          <name>jboss_origin</name>
-          <url>https://origin-repository.jboss.org/nexus/content/groups/ea</url>
-        </pluginRepository>
-        <pluginRepository>
-          <id>redhat.ga</id>
-          <name>Red Hat General Availability Repository</name>
-          <url>https://maven.repository.redhat.com/ga</url>
-        </pluginRepository>
-      </pluginRepositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <releases />
+      <snapshots />
+      <id>jboss_origin</id>
+      <name>jboss_origin</name>
+      <url>https://origin-repository.jboss.org/nexus/content/groups/ea</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>redhat.ga</id>
+      <name>Red Hat General Availability Repository</name>
+      <url>https://maven.repository.redhat.com/ga</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <modules>
     <!--connectors-->
@@ -97,7 +97,7 @@
   </modules>
 
   <build>
-		<plugins>
+    <plugins>
       <plugin>
         <groupId>org.codehaus.gmavenplus</groupId>
         <artifactId>gmavenplus-plugin</artifactId>
@@ -192,7 +192,7 @@
           </dependency>
         </dependencies>
       </plugin>
-	  </plugins>
+    </plugins>
   </build>
   
 </project>
