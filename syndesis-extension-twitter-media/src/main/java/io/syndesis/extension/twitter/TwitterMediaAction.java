@@ -54,7 +54,7 @@ public class TwitterMediaAction implements Step {
 					MediaEntity entity = entities[i];
 					urls += entity.getMediaURL();
 					
-					if (entities.length > i) {
+					if (entities.length > (1+i)) {
 						urls += ", ";
 					}
 				}
