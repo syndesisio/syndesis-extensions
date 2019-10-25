@@ -19,9 +19,10 @@ import twitter4j.Status;
 public class TwitterMediaAction implements Step {
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+	public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route,
+			Map<String, Object> parameters) {
 		ObjectHelper.notNull(route, "route");
-		
+
 		try {
 			route.process(this::process);
 		} catch (NullPointerException e) {
@@ -29,44 +30,46 @@ public class TwitterMediaAction implements Step {
 		} catch (ClassCastException e) {
 			route.log(e.getMessage());
 		}
-		return Optional.of(route); 
-    }
-	
+		return Optional.of(route);
+	}
+
 	private void process(Exchange exchange) {
 		// validate input
 		if (ObjectHelper.isEmpty(exchange)) {
 			throw new NullPointerException("Exchange is empty. Should be impossible.");
 		}
-		
+
 		Message message = exchange.getMessage();
 		if (ObjectHelper.isEmpty(message)) {
 			throw new NullPointerException("Message is empty. Should be impossible.");
 		}
-		
+
 		Object body = message.getBody();
-		
+
 		if (body instanceof Status) {
 			MediaEntity[] entities = ((Status) body).getMediaEntities();
 			if (entities != null) {
 				String urls = "";
-				
+
 				for (int i = 0; i < entities.length; i++) {
 					MediaEntity entity = entities[i];
 					urls += entity.getMediaURL();
-					
-					if (entities.length > (1+i)) {
+
+					if (entities.length > (1 + i)) {
 						urls += ", ";
 					}
 				}
-				
-				if (ObjectHelper.isEmpty(urls)) {
-					urls = null; // "no Media Objects in Tweet";
+
+				if (!ObjectHelper.isEmpty(urls)) {
+					message.setBody(urls);
+					message.getExchange().setOut(message);
+				} else {
+					message.getExchange().setOut(null); // "no Media Objects in Tweet";
 				}
-				message.setBody(urls);
-				message.getExchange().setOut(message);
 			}
 		} else {
-			throw new ClassCastException("Body isn't Status, why are you using this component!?" + (body != null ? body.getClass() : " empty"));
+			throw new ClassCastException("Body isn't Status, why are you using this component!?"
+					+ (body != null ? body.getClass() : " empty"));
 		}
 	}
 }
