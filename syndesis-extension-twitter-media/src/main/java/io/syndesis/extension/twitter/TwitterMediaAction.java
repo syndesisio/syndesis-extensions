@@ -60,7 +60,7 @@ public class TwitterMediaAction implements Step {
 				}
 				
 				if (ObjectHelper.isEmpty(urls)) {
-					urls = "no Media Objects in Tweet";
+					urls = null; // "no Media Objects in Tweet";
 				}
 				message.setBody(urls);
 				message.getExchange().setOut(message);
