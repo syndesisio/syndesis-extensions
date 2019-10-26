@@ -42,6 +42,9 @@ public class TweetMedia {
 		if (ObjectHelper.isNotEmpty(this.user) &&  ObjectHelper.isNotEmpty(this.createdAt) && ObjectHelper.isNotEmpty(mediaEntities)) {
 			json = new JSONObject();
 			json.put("twitterID", this.user.getId());
+			json.put("twitterName", this.user.getName());
+			json.put("twitterScreenName", this.user.getScreenName());
+			
 			json.put("tweetCreatedAt", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(this.createdAt));
 			
 			
