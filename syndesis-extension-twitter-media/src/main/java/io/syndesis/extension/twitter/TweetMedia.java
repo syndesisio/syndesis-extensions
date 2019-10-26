@@ -52,7 +52,8 @@ public class TweetMedia {
 		return json;
 	}
 	
-	public String toJSONtoString() {
+	@Override
+	public String toString() {
 		JSONObject json = toJSON();
 		return ObjectHelper.isNotEmpty(json) ? json.toString() : null;
 	}
