@@ -92,7 +92,7 @@
     <module>syndesis-extension-threads</module>
     <module>syndesis-extension-throttle</module>
     <module>syndesis-extension-yaml-dataformat</module>
-
+    <module>syndesis-extension-twitter-media</module>
     <!--library extensions-->
     <module>syndesis-library-jdbc-driver</module>
   </modules>
