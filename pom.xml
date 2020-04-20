@@ -90,6 +90,7 @@
     <module>syndesis-extension-text-converter</module>
     <module>syndesis-extension-threads</module>
     <module>syndesis-extension-throttle</module>
+    <module>syndesis-extension-validate</module>
     <module>syndesis-extension-yaml-dataformat</module>
 
     <!--library extensions-->
