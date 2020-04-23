@@ -209,6 +209,7 @@
               <rules>
                 <requireMavenVersion>
                   <version>[3.5,3.6)</version>
+                  <message>Syndesis 1.8 extensions requires Maven 3.5.x to be executed!</message>
                 </requireMavenVersion>
               </rules>
             </configuration>
