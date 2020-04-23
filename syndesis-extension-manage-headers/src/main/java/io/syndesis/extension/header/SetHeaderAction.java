@@ -12,7 +12,7 @@ import org.apache.camel.util.ObjectHelper;
 
 @Action(id = "setHeader", name = "Set Header", description = "Set an header", tags = { "header", "extension"})
 public class SetHeaderAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "name",
         displayName = "Header name",
@@ -28,7 +28,7 @@ public class SetHeaderAction implements Step {
         type = "string" ,
         required = true)
     private String value;
-    
+
 
     public String getName() {
 		return name;
@@ -47,7 +47,7 @@ public class SetHeaderAction implements Step {
 	}
 
     @Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(name, "name");
         ObjectHelper.notNull(value, "value");

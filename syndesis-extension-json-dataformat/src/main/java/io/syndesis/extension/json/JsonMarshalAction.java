@@ -16,15 +16,15 @@ import io.syndesis.extension.api.annotations.ConfigurationProperty;
 public class JsonMarshalAction implements Step {
 
 	public enum Kind {
-		Jackson, 
-		Gson, 
+		Jackson,
+		Gson,
 		Xstream,
 		Fastjson
 	}
 
-	@ConfigurationProperty(name = "kind", 
-			displayName = "Library Kind", 
-			description = "The Library to use", 
+	@ConfigurationProperty(name = "kind",
+			displayName = "Library Kind",
+			description = "The Library to use",
 			required = true)
 	private Kind kind;
 
@@ -37,7 +37,7 @@ public class JsonMarshalAction implements Step {
 	}
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
 		ObjectHelper.notNull(route, "route");
 		ObjectHelper.notNull(kind, "kind");
 

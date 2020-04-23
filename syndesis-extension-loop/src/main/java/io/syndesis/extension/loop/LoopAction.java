@@ -12,7 +12,7 @@ import org.apache.camel.util.ObjectHelper;
 
 @Action(id = "loop", name = "Loop", description = "Add a loop to your exchange", tags = { "loop", "extension"})
 public class LoopAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "cycles",
         displayName = "Cycles",
@@ -20,7 +20,7 @@ public class LoopAction implements Step {
         type = "int" ,
         required = true)
     private int cycles;
-    
+
 	public int getCycles() {
 		return cycles;
 	}
@@ -30,7 +30,7 @@ public class LoopAction implements Step {
 	}
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(cycles, "cycles");
 

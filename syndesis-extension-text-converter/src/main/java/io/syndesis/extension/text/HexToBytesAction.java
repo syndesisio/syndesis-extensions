@@ -15,7 +15,7 @@ import org.apache.commons.codec.binary.Hex;
 public class HexToBytesAction implements Step {
 
   @Override
-  public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+  public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
     ObjectHelper.notNull(route, "route");
 
     return Optional.of(route.process((Exchange exchange) -> {
