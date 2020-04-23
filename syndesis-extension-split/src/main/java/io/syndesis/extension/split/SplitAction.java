@@ -16,7 +16,7 @@ import org.apache.camel.spi.Language;
 
 @Action(id = "split", name = "Split", description = "Split your exchange", tags = { "split", "extension"})
 public class SplitAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "language",
         displayName = "Language",
@@ -46,7 +46,7 @@ public class SplitAction implements Step {
     }
 
     @Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         String languageName = language;
         String expressionDefinition = expression;
 

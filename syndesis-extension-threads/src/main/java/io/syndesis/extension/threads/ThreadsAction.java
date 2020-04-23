@@ -12,7 +12,7 @@ import org.apache.camel.util.ObjectHelper;
 
 @Action(id = "threads", name = "Threads", description = "Use the Threads EIP", tags = { "threads", "extension", "eip"})
 public class ThreadsAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "poolsize",
         displayName = "Pool Size",
@@ -20,7 +20,7 @@ public class ThreadsAction implements Step {
         type = "int" ,
         required = true)
     private int poolsize;
-    
+
     @ConfigurationProperty(
         name = "maxpoolsize",
         displayName = "Maximum Pool size",
@@ -28,7 +28,7 @@ public class ThreadsAction implements Step {
         type = "int" ,
         required = true)
     private int maxPoolSize;
-    
+
     @ConfigurationProperty(
         name = "threadname",
         displayName = "Thread Name",
@@ -62,7 +62,7 @@ public class ThreadsAction implements Step {
 	}
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(poolsize, "poolsize");
         ObjectHelper.notNull(maxPoolSize, "maxpoolsize");

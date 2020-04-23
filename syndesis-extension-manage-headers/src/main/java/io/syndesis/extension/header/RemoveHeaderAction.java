@@ -12,7 +12,7 @@ import org.apache.camel.util.ObjectHelper;
 
 @Action(id = "removeHeader", name = "Remove Header", description = "Remove an header", tags = { "header", "extension"})
 public class RemoveHeaderAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "name",
         displayName = "Header name",
@@ -20,7 +20,7 @@ public class RemoveHeaderAction implements Step {
         type = "string" ,
         required = true)
     private String name;
-    
+
 
     public String getName() {
 		return name;
@@ -31,10 +31,10 @@ public class RemoveHeaderAction implements Step {
 	}
 
     @Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(name, "name");
-        
+
         return Optional.of(route.removeHeader(name));
     }
 }

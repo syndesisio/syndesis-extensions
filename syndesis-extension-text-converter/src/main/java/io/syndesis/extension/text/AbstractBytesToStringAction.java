@@ -22,7 +22,7 @@ public abstract class AbstractBytesToStringAction implements Step {
   }
 
   @Override
-  public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+  public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
     ObjectHelper.notNull(route, "route");
     ObjectHelper.notNull(charset, "charset");
 

@@ -12,7 +12,7 @@ import org.apache.camel.util.ObjectHelper;
 
 @Action(id = "throttle", name = "Throttle", description = "Use the Throttle EIP", tags = { "throttle", "extension", "eip"})
 public class ThrottleAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "maximumRequestCount",
         displayName = "Maximum Request count",
@@ -20,7 +20,7 @@ public class ThrottleAction implements Step {
         type = "long" ,
         required = true)
     private long maximumRequestCount;
-    
+
     @ConfigurationProperty(
         name = "timePeriodMillis",
         displayName = "Time Period Milliseconds",
@@ -37,7 +37,7 @@ public class ThrottleAction implements Step {
 	public void setMaximumRequestCount(long maximumRequestCount) {
 		this.maximumRequestCount = maximumRequestCount;
 	}
-    
+
 	public long getTimePeriodMillis() {
 		return timePeriodMillis;
 	}
@@ -47,7 +47,7 @@ public class ThrottleAction implements Step {
 	}
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(maximumRequestCount, "maximumRequestCount");
 

@@ -12,7 +12,7 @@ import org.apache.camel.util.ObjectHelper;
 
 @Action(id = "delay", name = "Delay", description = "Add a delay to your exchange", tags = { "delay", "extension"})
 public class DelayAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "delay",
         displayName = "Delay",
@@ -30,7 +30,7 @@ public class DelayAction implements Step {
 	}
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(delay, "delay");
 
