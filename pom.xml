@@ -28,7 +28,7 @@
   <description>A Collection of Extensions for Syndesis</description>
 
   <properties>
-    <syndesis.version>1.8.13</syndesis.version>
+    <syndesis.version>2.0-SNAPSHOT</syndesis.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -67,12 +67,6 @@
 
   <modules>
     <!--connectors-->
-    <module>syndesis-connector-irc</module>
-    <module>syndesis-connector-log</module>
-    <module>syndesis-connector-telegram</module>
-    <module>syndesis-connector-timer</module>
-    <module>syndesis-connector-webhook</module>
-    <module>syndesis-connector-openshift</module>
 
     <!--step extensions-->
     <module>syndesis-extension-body</module>
@@ -208,7 +202,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.5,3.6)</version>
+                  <version>[3.5,)</version>
                 </requireMavenVersion>
               </rules>
             </configuration>
