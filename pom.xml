@@ -28,7 +28,7 @@
   <description>A Collection of Extensions for Syndesis</description>
 
   <properties>
-    <syndesis.version>1.8.13</syndesis.version>
+    <syndesis.version>1.9.0</syndesis.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -208,8 +208,8 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.5,3.6)</version>
-                  <message>Syndesis 1.8 extensions requires Maven 3.5.x to be executed!</message>
+                  <version>[3.5.4,3.6)</version>
+                  <message>Syndesis ${syndesis.version} extensions requires a Maven version above 3.5.4 and below 3.6.0 to be executed!</message>
                 </requireMavenVersion>
               </rules>
             </configuration>
