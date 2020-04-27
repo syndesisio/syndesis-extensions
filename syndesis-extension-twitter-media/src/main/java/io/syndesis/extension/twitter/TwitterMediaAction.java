@@ -18,7 +18,7 @@ import twitter4j.Status;
 public class TwitterMediaAction implements Step {
 
 	@Override
-	public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route,
+	public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route,
 			Map<String, Object> parameters) {
 		ObjectHelper.notNull(route, "route");
 
@@ -32,14 +32,14 @@ public class TwitterMediaAction implements Step {
 		return Optional.of(route);
 	}
 
-	
+
 	/**
-	 * Builds JSON message body of the MediaEntities detected in the Twitter message. Removes 
+	 * Builds JSON message body of the MediaEntities detected in the Twitter message. Removes
 	 * the Body of the message if no Entities are found
-	 * 
-	 * 
+	 *
+	 *
 	 * @param exchange 	The Camel Exchange object containing the Message, that in turn should
-	 * 					contain the MediaEntity and MediaURL  
+	 * 					contain the MediaEntity and MediaURL
 	 */
 	private void process(Exchange exchange) {
 		// validate input

@@ -1,5 +1,7 @@
 # Syndesis Log Connector
 
+**Warning**: this extension is deprecated. It may not work properly with Syndesis version 2.x and above.
+
 Implementing logger as a connector.
 
 The connector exposes these configurable fields:

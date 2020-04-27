@@ -9,11 +9,12 @@ import org.apache.camel.AsyncCallback;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
+import org.apache.camel.NamedNode;
 import org.apache.camel.Processor;
 import org.apache.camel.model.PipelineDefinition;
 import org.apache.camel.model.ProcessorDefinition;
-import org.apache.camel.processor.DelegateAsyncProcessor;
 import org.apache.camel.spi.InterceptStrategy;
+import org.apache.camel.support.processor.DelegateAsyncProcessor;
 import org.apache.camel.util.ObjectHelper;
 
 import io.syndesis.extension.api.Step;
@@ -45,19 +46,21 @@ public class CacheAction implements Step {
     }
 
     @Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(steps, "steps");
 
         final AtomicReference<Message> cachedValue = new AtomicReference<>();
 
         final String cahceStepId = route.getId();
-        context.addInterceptStrategy(new InterceptStrategy() {
+
+        route.addInterceptStrategy(new InterceptStrategy() {
 
             boolean countingDown = false;
             int remaining = steps;
 
-            public Processor wrapProcessorInInterceptors(CamelContext context, ProcessorDefinition<?> definition, Processor target, Processor nextTarget) throws Exception {
+            @Override
+            public Processor wrapProcessorInInterceptors(CamelContext context, NamedNode definition, Processor target, Processor nextTarget) throws Exception {
                 System.out.println("intercept pipeline " + definition.getId() + ", " + cahceStepId);
 
                 if (definition instanceof PipelineDefinition) {

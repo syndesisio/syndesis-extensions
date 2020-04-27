@@ -14,7 +14,7 @@ import static org.apache.camel.language.simple.SimpleLanguage.predicate;
 
 @Action(id = "validate", name = "validate", description = "Add a simple validation step to your exchange", tags = { "validate", "extension"})
 public class ValidateAction implements Step {
-    
+
     @ConfigurationProperty(
         name = "rule",
         displayName = "Validation rule",
@@ -32,11 +32,10 @@ public class ValidateAction implements Step {
     }
 
 	@Override
-    public Optional<ProcessorDefinition> configure(CamelContext context, ProcessorDefinition route, Map<String, Object> parameters) {
+    public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
         ObjectHelper.notNull(rule, "rule");
 
         return Optional.of(route.validate(predicate(rule)));
     }
-
 }

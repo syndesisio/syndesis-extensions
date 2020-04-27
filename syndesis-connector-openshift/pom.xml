@@ -121,6 +121,32 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <executions>
+          <execution>
+            <id>enforce-syndesis-version</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireProperty>
+                  <property>syndesis.version</property>
+                  <regex>.*1\.\d\.\d.*</regex>
+                  <regexMessage>This extension is only supported in any 1.x.y Syndesis version.</regexMessage>
+                </requireProperty>
+                <requireMavenVersion>
+                  <version>[3.5,3.6)</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
