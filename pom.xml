@@ -91,6 +91,7 @@
 
     <!--library extensions-->
     <module>syndesis-library-jdbc-driver</module>
+    <module>syndesis-extension-csv-dataformat</module>
   </modules>
 
   <build>
