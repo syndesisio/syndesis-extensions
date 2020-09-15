@@ -211,6 +211,10 @@
                   <version>[3.5.4,3.6)</version>
                   <message>Syndesis ${syndesis.version} extensions requires a Maven version above 3.5.4 and below 3.6.0 to be executed!</message>
                 </requireMavenVersion>
+                <requireJavaVersion>
+                  <version>[1.8,1.9)</version>
+                  <message>Syndesis ${syndesis.version} extensions requires Java 1.8!</message>
+                </requireJavaVersion>
               </rules>
             </configuration>
           </execution>
