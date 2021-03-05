@@ -14,12 +14,12 @@ Fill the arguments required by the prompt procedure and you will finally have a 
 ```bash
 mvn clean install
 ```
-if you like to build the extensions against a particular Syndesis version please set the `syndesis.version` property accordingly in the `pom.xml` or provide the variable to maven build:
+if you like to build the extensions against a particular Syndesis version please set the `syndesis.version` property accordingly in the `pom.xml`:
 
  ```bash
- mvn clean install -Dsyndesis.version=1.8.13
+ mvn clean install
  ```
-**Note**: the `master` branch is aligned with `master` [syndesis repository](https://github.com/syndesisio/syndesis). You can use release branches (ie [`1.3.x`](./tree/1.3.x), [`1.8.x`]((./tree/1.8.x)), ...) if you need to build the extensions provided in this repository targeting an old syndesis version.
+**Note**: the `master` branch is aligned with latest 1.x branch of [syndesis repository](https://github.com/syndesisio/syndesis). You can use release branches (ie [`1.3.x`](./tree/1.3.x), [`1.8.x`]((./tree/1.8.x)), ...) if you need to build the extensions provided in this repository targeting an old syndesis version.
 
 ### Build with automatic Syndesis version detection:
 Another option is to use the `syndesisServerUrl` to pass the url of a running Syndesis instance and let maven figure the right version out for you:

@@ -14,7 +14,7 @@ import org.apache.camel.Processor;
 import org.apache.camel.model.PipelineDefinition;
 import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.spi.InterceptStrategy;
-import org.apache.camel.support.processor.DelegateAsyncProcessor;
+import org.apache.camel.processor.DelegateAsyncProcessor;
 import org.apache.camel.util.ObjectHelper;
 
 import io.syndesis.extension.api.Step;
@@ -60,7 +60,7 @@ public class CacheAction implements Step {
             int remaining = steps;
 
             @Override
-            public Processor wrapProcessorInInterceptors(CamelContext context, NamedNode definition, Processor target, Processor nextTarget) throws Exception {
+            public Processor wrapProcessorInInterceptors(CamelContext context, ProcessorDefinition<?> definition, Processor target, Processor nextTarget) throws Exception {
                 System.out.println("intercept pipeline " + definition.getId() + ", " + cahceStepId);
 
                 if (definition instanceof PipelineDefinition) {
