@@ -28,7 +28,7 @@
   <description>A Collection of Extensions for Syndesis</description>
 
   <properties>
-    <syndesis.version>2.0-SNAPSHOT</syndesis.version>
+    <syndesis.version>1.11.0</syndesis.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
