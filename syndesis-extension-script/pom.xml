@@ -52,7 +52,7 @@
         <artifactId>groovy-all</artifactId>
         <version>2.4.12</version>
         <!-- it's essential to provide scope=provided -->
-        <scope>provided</scope>
+        <!-- scope>provided</scope -->
     </dependency>
 
   </dependencies>

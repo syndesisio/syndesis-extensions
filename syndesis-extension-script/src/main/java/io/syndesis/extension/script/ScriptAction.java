@@ -18,8 +18,11 @@ import org.apache.camel.util.StringHelper;
 
 @Action(id = "script", name = "Script", description = "Run Scripts", tags = { "scripting", "extension"})
 public class ScriptAction implements Step {
+
     public enum Language {
+        @ConfigurationProperty.PropertyEnum(label = "Groovy", value = "groovy")
         groovy,
+        @ConfigurationProperty.PropertyEnum(label = "Javascript", value = "javascript")
         javascript
     }
 
@@ -39,6 +42,7 @@ public class ScriptAction implements Step {
         type = "textarea" ,
         required = true)
     private String script;
+
 
     public Language getLanguage() {
         return language;
@@ -64,8 +68,8 @@ public class ScriptAction implements Step {
     @Override
     public Optional<ProcessorDefinition<?>> configure(CamelContext context, ProcessorDefinition<?> route, Map<String, Object> parameters) {
         ObjectHelper.notNull(route, "route");
-        ObjectHelper.notNull(engine, "engine");
         ObjectHelper.notNull(language, "language");
+        ObjectHelper.notNull(engine, "engine");
         StringHelper.notEmpty(script, "script");
 
         return Optional.of(route.process(this::process));
