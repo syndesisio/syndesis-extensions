@@ -47,10 +47,8 @@
     <!-- project dependencies -->
     <dependency>
         <groupId>org.codehaus.groovy</groupId>
-        <artifactId>groovy-all</artifactId>
-        <version>2.4.12</version>
-        <!-- it's essential to provide scope=provided -->
-        <scope>provided</scope>
+        <artifactId>groovy</artifactId>
+        <version>${org.codehaus.groovy.version}</version>
     </dependency>
 
   </dependencies>
